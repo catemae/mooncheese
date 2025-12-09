@@ -1,104 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mooncheese gallery</title>
 
-<!-- GLightbox CSS -->
-<link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <!-- GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-<style>
-/* Base site styles */
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: Verdana, sans-serif;
-  background-color: #fafafa;
-  color: #333;
-  text-align: center;
-}
+  <style>
+    /* --- Base --- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.5;
+      text-transform: lowercase;
+      text-align: center;
+    }
 
-/* Headings */
-h1 {
-  margin-bottom: 20px;
-}
+    a {
+      color: #333;
+      text-decoration: none;
+    }
 
-/* Gallery grid */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-/* Thumbnail container to enforce consistent aspect ratio */
-.thumb {
-  width: 100%;
-  aspect-ratio: 4 / 3;   /* change to 1 / 1 for square thumbnails if you prefer */
-  overflow: hidden;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
+    /* --- Wrapper --- */
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
 
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills container, cropping if necessary */
-  display: block;
-}
+    /* --- Logo --- */
+    .site-logo {
+      display: block;
+      max-width: 300px;
+      width: auto;
+      height: auto;
+      margin: 0 auto 1rem auto;
+    }
 
-.thumb:hover {
-  transform: scale(1.05);
-}
+    /* --- Gallery Grid --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+      margin-top: 1rem;
+    }
 
-/* Link styling */
-a {
-  color: #333;
-  text-decoration: none;
-}
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-/* Back link */
-p {
-  margin-top: 30px;
-  font-size: 1em;
-}
-</style>
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* --- Thumbnail Styling --- */
+    .gallery .thumb {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .gallery .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery .thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* --- Footer --- */
+    footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+      padding-top: 0.5rem;
+    }
+  </style>
 </head>
 <body>
+  <div class="wrapper">
+    <img src="https://mooncheese.neocities.org/logo.png" alt="mooncheese logo" class="site-logo">
 
-<h1>Latest Work</h1>
+    <h1>gallery</h1>
+    <p>all images developed & processed by me.</p>
 
-<div class="gallery">
-  <a href="photos/2025-04-12-0044.jpg" class="glightbox thumb">
-    <img src="photos/2025-04-12-0044.jpg" alt="2025-04-12-0044">
-  </a>
-  <a href="photos/2025-04-12-0048.jpg" class="glightbox thumb">
-    <img src="photos/2025-04-12-0048.jpg"alt="2025-04-12-0048">
-  </a>
-  <a href="photos/2025-04-12-0036.jpg" class="glightbox thumb">
-    <img src="photos/2025-04-12-0036.jpg" alt="2025-04-12-0036">
-  </a>
-  <!-- add more images in the same pattern -->
-</div>
+    <div class="gallery">
+      <a href="photos/2025-04-12-0044.jpg" class="glightbox thumb">
+        <img src="photos/thumbs/2025-04-12-0044.jpg" alt="2025-04-12-0044" loading="lazy">
+      </a>
+      <a href="photos/2025-04-12-0048.jpg" class="glightbox thumb">
+        <img src="photos/thumbs/2025-04-12-0048.jpg" alt="2025-04-12-0048" loading="lazy">
+      </a>
+      <a href="photos/2025-04-12-0036.jpg" class="glightbox thumb">
+        <img src="photos/thumbs/2025-04-12-0036.jpg" alt="2025-04-12-0036" loading="lazy">
+      </a>
+      <!-- Add more thumbnails here following the same pattern -->
+    </div>
 
-<p><a href="index.html">&larr; Back to Home</a></p>
+    <p><a href="index.html">&larr; Back to home</a></p>
 
-<!-- GLightbox JS -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-const lightbox = GLightbox({
-  selector: '.glightbox',
-  loop: true,
-  descPosition: 'none'
-});
-</script>
+    <footer>
+      last updated: dec 2025<br>
+      © cait
+    </footer>
+  </div>
 
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      loop: true,
+      descPosition: 'none'
+    });
+  </script>
 </body>
 </html>
