@@ -1,0 +1,93 @@
+/* Base site styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;  /* page background */
+  color: black;             /* default text color */
+  font-family: Verdana, sans-serif; /* fallback font included */
+  box-sizing: border-box;
+}
+
+/* 404 page container */
+body.404 {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;             /* padding for small screens */
+  height: 100vh;             /* full viewport height */
+}
+
+/* 404 image */
+body.404 img {
+  max-width: 100%;  /* scales down on small screens */
+  width: auto;      /* full resolution if possible */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* 404 headings and paragraphs */
+body.404 h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+body.404 p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+/* Responsive text for very small screens */
+@media (max-width: 400px) {
+  body.404 h1 {
+    font-size: 1.5em;
+  }
+  body.404 p {
+    font-size: 1em;
+  }
+}
+
+/* Optional link styling for the site */
+a {
+  color: #D55816;
+  text-decoration: none;
+}
+
+/* Hover link style */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery styling (applies to gallery pages AND homepage "Latest Work") */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-bottom: 30px; /* optional spacing below gallery */
+}
+
+/* Thumbnail container to enforce uniform aspect ratio */
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* change to 1 / 1 for square thumbnails */
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Image inside thumbnail */
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops nicely while keeping aspect ratio */
+  display: block;
+}
+
+/* Hover effect on thumbnails */
+.thumb:hover {
+  transform: scale(1.05);
+}

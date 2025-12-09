@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #fafafa;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;   /* horizontal center */
+        align-items: center;       /* vertical center */
+        text-align: center;
+        flex-direction: column;
+        padding: 20px;             /* small padding for very tiny screens */
+        box-sizing: border-box;
+      }
+
+      img {
+        max-width: 100%;           /* scales down if needed */
+        width: auto;               /* keeps full resolution when possible */
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 1.2em;
+      }
+
+      /* Optional: make text slightly smaller on very small screens */
+      @media (max-width: 400px) {
+        h1 {
+          font-size: 1.5em;
+        }
+        p {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://mooncheese.neocities.org/404.png" alt="404">
+    <h1>Page Not Found</h1>
+    <p>The requested page was not found.</p>
+  </body>
+</html>

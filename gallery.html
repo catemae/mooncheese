@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+
+<!-- GLightbox CSS -->
+<link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+<style>
+/* Base site styles */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Verdana, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+/* Thumbnail container to enforce consistent aspect ratio */
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* change to 1 / 1 for square thumbnails if you prefer */
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container, cropping if necessary */
+  display: block;
+}
+
+.thumb:hover {
+  transform: scale(1.05);
+}
+
+/* Link styling */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Back link */
+p {
+  margin-top: 30px;
+  font-size: 1em;
+}
+</style>
+</head>
+<body>
+
+<h1>Latest Work</h1>
+
+<div class="gallery">
+  <a href="photos/2025-04-12-0044.jpg" class="glightbox thumb">
+    <img src="photos/2025-04-12-0044.jpg" alt="2025-04-12-0044">
+  </a>
+  <a href="photos/2025-04-12-0048.jpg" class="glightbox thumb">
+    <img src="photos/2025-04-12-0048.jpg"alt="2025-04-12-0048">
+  </a>
+  <a href="photos/2025-04-12-0036.jpg" class="glightbox thumb">
+    <img src="photos/2025-04-12-0036.jpg" alt="2025-04-12-0036">
+  </a>
+  <!-- add more images in the same pattern -->
+</div>
+
+<p><a href="index.html">&larr; Back to Home</a></p>
+
+<!-- GLightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+const lightbox = GLightbox({
+  selector: '.glightbox',
+  loop: true,
+  descPosition: 'none'
+});
+</script>
+
+</body>
+</html>
