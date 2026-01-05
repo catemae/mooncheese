@@ -1,0 +1,110 @@
+/* --- Base site styles --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* dark gray background */
+  color: white;           /* white text */
+  font-family: Verdana, sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+/* Ensure wrapper doesn't block background */
+.wrapper {
+  background: transparent;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* --- 404 page styling --- */
+body.404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+}
+
+body.404 img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+body.404 h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+body.404 p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+@media (max-width: 400px) {
+  body.404 h1 {
+    font-size: 1.5em;
+  }
+  body.404 p {
+    font-size: 1em;
+  }
+}
+
+/* --- Links --- */
+a {
+  color: #D55816;  /* orange links pop on dark gray */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Gallery styling --- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+/* Thumbnail container */
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  overflow: hidden;
+  border: 1px solid #555; /* slightly darker border for dark bg */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* subtle shadow on dark bg */
+}
+
+/* Image inside thumbnail */
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95); /* slightly dim thumbnails for contrast */
+}
+
+/* Hover effect on thumbnails */
+.thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* stronger shadow on hover */
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  color: #ccc;
+  border-top: 1px solid #555;
+  padding-top: 0.5rem;
+}
