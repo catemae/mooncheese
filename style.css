@@ -1,93 +1,136 @@
-/* Base site styles */
+/* --- Base site styles --- */
 body {
+  font: 10px Calibri, sans-serif;
+  letter-spacing: 1px;
+  color: #333;
+  background: #eee;
   margin: 0;
   padding: 0;
-  background-color: white;  /* page background */
-  color: black;             /* default text color */
-  font-family: Verdana, sans-serif; /* fallback font included */
+}
+
+/* --- Links --- */
+a:link, a:visited, a:active {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #555;
+}
+a img {
+  border-width: 0;
+}
+
+/* --- Bold text --- */
+b {
+  color: #111;
+  font-weight: bold;
+}
+
+/* --- Scrollbar styling for WebKit --- */
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0;
+  border: 1px solid #cc0000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 4px;
+  background: transparent;
+}
+
+/* --- Titles & boxes --- */
+.title {
+  color: #000;
+  background-color: #bbb;
+  padding: 4px 8px 2px 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 10px;
+  line-height: 11px;
+}
+
+.box {
+  background-color: #fff;
+  border: 1px solid #bbb;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+/* --- Banner --- */
+.banner {
+  width: 100%;
+  max-width: 800px;           /* adjust width as needed */
+  background-color: #fff;
+  border: 1px solid #bbb;
+  margin: 60px auto 20px;     /* top spacing + bottom spacing */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
 
-/* 404 page container */
-body.404 {
-  display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
-  text-align: center;
-  flex-direction: column;
-  padding: 20px;             /* padding for small screens */
-  height: 100vh;             /* full viewport height */
-}
-
-/* 404 image */
-body.404 img {
-  max-width: 100%;  /* scales down on small screens */
-  width: auto;      /* full resolution if possible */
+.banner img {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
-}
-
-/* 404 headings and paragraphs */
-body.404 h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-body.404 p {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-
-/* Responsive text for very small screens */
-@media (max-width: 400px) {
-  body.404 h1 {
-    font-size: 1.5em;
-  }
-  body.404 p {
-    font-size: 1em;
-  }
-}
-
-/* Optional link styling for the site */
-a {
-  color: #D55816;
-  text-decoration: none;
-}
-
-/* Hover link style */
-a:hover {
-  text-decoration: underline;
-}
-
-/* Gallery styling (applies to gallery pages AND homepage "Latest Work") */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-  margin-bottom: 30px; /* optional spacing below gallery */
-}
-
-/* Thumbnail container to enforce uniform aspect ratio */
-.thumb {
-  width: 100%;
-  aspect-ratio: 4 / 3; /* change to 1 / 1 for square thumbnails */
-  overflow: hidden;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-/* Image inside thumbnail */
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crops nicely while keeping aspect ratio */
   display: block;
 }
 
-/* Hover effect on thumbnails */
-.thumb:hover {
-  transform: scale(1.05);
+.banner h1 {
+  margin: 10px 0 0 0;
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+}
+
+/* --- Navigation --- */
+#navigation {
+  width: 100%;
+  max-width: 605px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+#navigation li {
+  float: none;
+}
+
+#navigation li a {
+  display: block;
+  padding: 2px 10px;
+  font: italic 11px Georgia, serif;
+  text-transform: lowercase;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: normal;
+  color: #000;
+  background: #fff;
+  border: 0;
+}
+
+#navigation li a:hover {
+  color: #AB9DBD;
+  background-color: #444;
+}
+
+/* --- Columns (content sections) --- */
+.column {
+  max-width: 700px;          /* adjust for each column */
+  margin: 20px auto;         /* centers content */
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 40px;
+  font-size: 0.75em;
+  color: #333;
+  text-align: center;        /* centers footer content */
+  padding: 10px 0;           /* optional padding for spacing */
+  border-top: 1px solid #bbb; /* optional border for separation */
 }
